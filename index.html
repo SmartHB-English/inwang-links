@@ -34,16 +34,26 @@
   main { width: 100%; max-width: 420px; }
 
   header { text-align: center; margin-bottom: 32px; }
-  .logo {
-    width: 84px; height: 84px; margin: 0 auto 18px;
-    border-radius: 50%;
-    background: var(--accent);
-    color: #fff;
-    display: flex; align-items: center; justify-content: center;
-    font-size: 26px; font-weight: 700; letter-spacing: -0.5px;
+  .eyebrow {
+    font-size: 12px; font-weight: 700; letter-spacing: 3px;
+    color: var(--accent); margin-bottom: 10px;
   }
-  h1 { font-size: 20px; font-weight: 700; letter-spacing: -0.4px; line-height: 1.4; word-break: keep-all; }
-  .tagline { margin-top: 6px; font-size: 14px; color: var(--sub); }
+  h1 { word-break: keep-all; line-height: 1.15; }
+  h1 .big {
+    display: block;
+    font-size: 46px; font-weight: 900; letter-spacing: -2px;
+    color: var(--text);
+  }
+  h1 .hl {
+    background: linear-gradient(transparent 62%, #c9d8ef 62%, #c9d8ef 92%, transparent 92%);
+    padding: 0 4px;
+  }
+  h1 .rest {
+    display: block; margin-top: 8px;
+    font-size: 20px; font-weight: 800; letter-spacing: -0.6px;
+    color: var(--accent);
+  }
+  .tagline { margin-top: 12px; font-size: 14px; color: var(--sub); }
 
   .links { display: flex; flex-direction: column; gap: 12px; }
   .link {
@@ -74,14 +84,44 @@
   .link.primary .label small { color: rgba(255,255,255,.75); }
   .link.primary .arrow { color: rgba(255,255,255,.7); }
 
+  .app {
+    margin-top: 28px;
+    padding: 18px;
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 18px;
+  }
+  .app-head { display: flex; align-items: center; gap: 12px; margin-bottom: 14px; }
+  .app-icon {
+    flex: none; width: 46px; height: 46px; border-radius: 12px;
+    background: var(--accent); color: #fff;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 13px; font-weight: 800; letter-spacing: -0.3px;
+  }
+  .app-name { font-size: 17px; font-weight: 800; letter-spacing: -0.4px; }
+  .app-desc { font-size: 13px; color: var(--sub); margin-top: 2px; }
+  .stores { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .store {
+    display: flex; align-items: center; justify-content: center; gap: 8px;
+    padding: 11px 8px;
+    background: var(--text); color: #fff;
+    border-radius: 12px; text-decoration: none;
+    transition: transform .12s ease, opacity .12s ease;
+  }
+  .store:hover { opacity: .88; }
+  .store:active { transform: scale(.97); }
+  .store svg { width: 20px; height: 20px; flex: none; }
+  .store span { font-size: 15px; font-weight: 700; line-height: 1.15; }
+  .store small { display: block; font-size: 10px; font-weight: 500; opacity: .7; }
+
   footer { margin-top: 36px; text-align: center; font-size: 12px; color: #9aa1ab; }
 </style>
 </head>
 <body>
 <main>
   <header>
-    <div class="logo">인왕</div>
-    <h1>홍제인왕스마트해법수학영어학원</h1>
+    <p class="eyebrow">HONGJE INWANG</p>
+    <h1><span class="big"><span class="hl">홍제인왕</span></span><span class="rest">스마트해법수학영어학원</span></h1>
     <p class="tagline">인왕초 · 인왕중 학생들의 영어·수학 학원</p>
   </header>
 
@@ -110,6 +150,26 @@
       <span class="arrow">›</span>
     </a>
   </nav>
+
+  <section class="app">
+    <div class="app-head">
+      <span class="app-icon">Voca</span>
+      <div>
+        <p class="app-name">인왕보카</p>
+        <p class="app-desc">우리 학원 영단어 학습 앱</p>
+      </div>
+    </div>
+    <div class="stores">
+      <a class="store" href="https://play.google.com/store/apps/details?id=com.smarthb.vocab" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M5 3.5v17a.5.5 0 0 0 .76.43l14.5-8.5a.5.5 0 0 0 0-.86L5.76 3.07A.5.5 0 0 0 5 3.5z"/></svg>
+        <span><small>Android</small>Google Play</span>
+      </a>
+      <a class="store" href="https://apps.apple.com/kr/app/%EC%9D%B8%EC%99%95%EB%B3%B4%EC%B9%B4/id6822165926" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="6" y="2.5" width="12" height="19" rx="2.5"/><path d="M10.5 18.5h3"/></svg>
+        <span><small>iPhone</small>App Store</span>
+      </a>
+    </div>
+  </section>
 
   <footer>© 홍제인왕스마트해법수학영어학원</footer>
 </main>
