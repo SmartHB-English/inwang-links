@@ -4,21 +4,24 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>홍제인왕스마트해법수학영어학원</title>
-<meta name="description" content="홍제인왕스마트해법수학영어학원 상담 신청 · 블로그 · 인스타그램 · 카카오톡 채널">
+<meta name="description" content="홍제인왕스마트해법수학영어학원 상담 신청 · 인왕보카 앱 · 블로그 · 인스타그램 · 카카오톡 채널">
 <meta property="og:title" content="홍제인왕스마트해법수학영어학원">
-<meta property="og:description" content="상담 신청 · 블로그 · 인스타그램 · 카카오톡 채널">
+<meta property="og:description" content="상담 신청 · 인왕보카 앱 · 블로그 · 인스타그램 · 카카오톡 채널">
 <meta property="og:type" content="website">
+<meta name="theme-color" content="#173e72">
 <link rel="preconnect" href="https://cdn.jsdelivr.net">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
 <style>
   :root {
-    --bg: #f5f6f8;
+    --bg: #f3f5f9;
     --card: #ffffff;
     --text: #1c2230;
     --sub: #6b7280;
     --line: #e5e7eb;
     --accent: #1f4e8c;
+    --navy: #173e72;
     --accent-soft: #e8eef7;
+    --sky: #8fb6ec;
   }
   * { box-sizing: border-box; margin: 0; padding: 0; }
   body {
@@ -26,79 +29,96 @@
     background: var(--bg);
     color: var(--text);
     min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    padding: 56px 20px 40px;
     -webkit-font-smoothing: antialiased;
   }
-  main { width: 100%; max-width: 420px; }
 
-  header { text-align: center; margin-bottom: 32px; }
-  .eyebrow {
-    font-size: 12px; font-weight: 700; letter-spacing: 3px;
-    color: var(--accent); margin-bottom: 10px;
+  /* ── 상단 포스터 ── */
+  .hero {
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(160deg, #0f2d57 0%, var(--navy) 45%, #2a64b0 100%);
+    color: #fff;
+    text-align: center;
+    padding: 64px 24px 92px;
+    border-radius: 0 0 36px 36px;
   }
-  h1 { word-break: keep-all; line-height: 1.15; }
+  .hero .shape { position: absolute; border-radius: 50%; pointer-events: none; }
+  .hero .s1 { width: 260px; height: 260px; top: -90px; right: -80px; background: rgba(143,182,236,.18); animation: float 9s ease-in-out infinite; }
+  .hero .s2 { width: 140px; height: 140px; bottom: -40px; left: -40px; border: 22px solid rgba(255,255,255,.07); animation: float 11s ease-in-out infinite reverse; }
+  .hero .s3 { width: 14px; height: 14px; top: 70px; left: 15%; background: #ffd65a; animation: float 6s ease-in-out infinite; }
+  .hero .s4 { width: 8px; height: 8px; top: 160px; right: 16%; background: rgba(255,255,255,.6); animation: float 7s ease-in-out infinite reverse; }
+  .hero .grid {
+    position: absolute; inset: 0; pointer-events: none;
+    background-image: radial-gradient(rgba(255,255,255,.09) 1.2px, transparent 1.2px);
+    background-size: 18px 18px;
+    mask-image: linear-gradient(to bottom, #000 0%, transparent 85%);
+    -webkit-mask-image: linear-gradient(to bottom, #000 0%, transparent 85%);
+  }
+  .hero-inner { position: relative; max-width: 420px; margin: 0 auto; }
+
+  .eyebrow {
+    display: inline-block;
+    font-size: 11px; font-weight: 700; letter-spacing: 3.5px;
+    color: var(--sky);
+    margin-bottom: 14px;
+  }
+  h1 { word-break: keep-all; line-height: 1.1; }
   h1 .big {
     display: block;
-    font-size: 46px; font-weight: 900; letter-spacing: -2px;
-    color: var(--text);
+    font-size: 54px; font-weight: 900; letter-spacing: -1.2px;
   }
   h1 .hl {
-    background: linear-gradient(transparent 62%, #c9d8ef 62%, #c9d8ef 92%, transparent 92%);
-    padding: 0 4px;
+    position: relative; display: inline-block; padding: 0 6px;
   }
+  h1 .hl::after {
+    content: ""; position: absolute; left: 0; right: 0; bottom: -10px; height: 7px;
+    background: #ffd65a; opacity: .9; z-index: -1; border-radius: 3px;
+    transform-origin: left; transform: scaleX(0);
+    animation: draw .7s .55s cubic-bezier(.6,0,.2,1) forwards;
+  }
+  h1 .hl span { position: relative; z-index: 1; }
+  h1 .hl { z-index: 0; isolation: isolate; }
+  h1 .hl::after { z-index: -1; }
+  h1 .hl span { color: #fff; text-shadow: 0 4px 18px rgba(8,25,52,.45); }
   h1 .rest {
-    display: block; margin-top: 8px;
+    display: block; margin-top: 22px;
     font-size: 20px; font-weight: 800; letter-spacing: -0.6px;
-    color: var(--accent);
+    color: #dbe7f8;
   }
-  .tagline { margin-top: 12px; font-size: 14px; color: var(--sub); }
+  .chips { margin-top: 18px; display: flex; justify-content: center; gap: 8px; flex-wrap: wrap; }
+  .chip {
+    font-size: 13px; font-weight: 600;
+    padding: 6px 12px; border-radius: 999px;
+    background: rgba(255,255,255,.12);
+    border: 1px solid rgba(255,255,255,.18);
+    color: #fff;
+    backdrop-filter: blur(4px);
+  }
 
-  .links { display: flex; flex-direction: column; gap: 12px; }
-  .link {
-    display: flex; align-items: center; gap: 14px;
-    padding: 16px 18px;
-    background: var(--card);
-    border: 1px solid var(--line);
-    border-radius: 14px;
-    color: var(--text);
-    text-decoration: none;
-    font-size: 16px; font-weight: 600;
-    transition: transform .12s ease, border-color .12s ease, box-shadow .12s ease;
-  }
-  .link:hover { border-color: var(--accent); box-shadow: 0 4px 14px rgba(31,78,140,.08); }
-  .link:active { transform: scale(.98); }
-  .link .icon {
-    flex: none; width: 40px; height: 40px; border-radius: 10px;
-    background: var(--accent-soft); color: var(--accent);
-    display: flex; align-items: center; justify-content: center;
-  }
-  .link .icon svg { width: 20px; height: 20px; }
-  .link .label { flex: 1; }
-  .link .label small { display: block; font-size: 13px; font-weight: 400; color: var(--sub); margin-top: 2px; }
-  .link .arrow { color: #b8bec8; font-size: 18px; }
-
-  .link.primary { background: var(--accent); border-color: var(--accent); color: #fff; }
-  .link.primary .icon { background: rgba(255,255,255,.16); color: #fff; }
-  .link.primary .label small { color: rgba(255,255,255,.75); }
-  .link.primary .arrow { color: rgba(255,255,255,.7); }
+  /* ── 본문 ── */
+  main { position: relative; max-width: 420px; margin: -60px auto 0; padding: 0 20px 40px; }
 
   .app {
-    margin-top: 28px;
     padding: 18px;
     background: var(--card);
-    border: 1px solid var(--line);
-    border-radius: 18px;
+    border-radius: 20px;
+    box-shadow: 0 12px 32px rgba(15,45,87,.16);
+    margin-bottom: 20px;
   }
   .app-head { display: flex; align-items: center; gap: 12px; margin-bottom: 14px; }
   .app-icon {
     flex: none; width: 46px; height: 46px; border-radius: 12px;
-    background: var(--accent); color: #fff;
+    background: linear-gradient(140deg, #2a64b0, var(--navy)); color: #fff;
     display: flex; align-items: center; justify-content: center;
     font-size: 13px; font-weight: 800; letter-spacing: -0.3px;
   }
   .app-name { font-size: 17px; font-weight: 800; letter-spacing: -0.4px; }
+  .app-name .new {
+    display: inline-block; vertical-align: 2px; margin-left: 6px;
+    font-size: 10px; font-weight: 800; letter-spacing: .5px;
+    padding: 2px 6px; border-radius: 6px;
+    background: #ffd65a; color: #4a3a00;
+  }
   .app-desc { font-size: 13px; color: var(--sub); margin-top: 2px; }
   .stores { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
   .store {
@@ -114,48 +134,93 @@
   .store span { font-size: 15px; font-weight: 700; line-height: 1.15; }
   .store small { display: block; font-size: 10px; font-weight: 500; opacity: .7; }
 
+  .links { display: flex; flex-direction: column; gap: 12px; }
+  .link {
+    position: relative; overflow: hidden;
+    display: flex; align-items: center; gap: 14px;
+    padding: 16px 18px;
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    color: var(--text);
+    text-decoration: none;
+    font-size: 16px; font-weight: 600;
+    transition: transform .15s ease, border-color .15s ease, box-shadow .15s ease;
+  }
+  .link:hover { border-color: var(--accent); box-shadow: 0 6px 18px rgba(31,78,140,.10); transform: translateY(-2px); }
+  .link:active { transform: scale(.98); }
+  .link .icon {
+    flex: none; width: 40px; height: 40px; border-radius: 11px;
+    background: var(--accent-soft); color: var(--accent);
+    display: flex; align-items: center; justify-content: center;
+  }
+  .link .icon svg { width: 20px; height: 20px; }
+  .link .label { flex: 1; }
+  .link .label small { display: block; font-size: 13px; font-weight: 400; color: var(--sub); margin-top: 2px; }
+  .link .arrow { color: #b8bec8; font-size: 18px; transition: transform .15s ease; }
+  .link:hover .arrow { transform: translateX(3px); }
+
+  .link.primary {
+    background: linear-gradient(120deg, var(--navy), #2a64b0);
+    border: none; color: #fff;
+    padding: 18px;
+    box-shadow: 0 10px 24px rgba(31,78,140,.28);
+  }
+  .link.primary .icon { background: #ffd65a; color: var(--navy); }
+  .link.primary .label { font-size: 17px; font-weight: 800; }
+  .link.primary .label small { color: rgba(255,255,255,.78); }
+  .link.primary .arrow { color: #fff; }
+  .link.primary::after {
+    content: ""; position: absolute; top: 0; bottom: 0; left: -60%; width: 40%;
+    background: linear-gradient(100deg, transparent, rgba(255,255,255,.28), transparent);
+    transform: skewX(-20deg);
+    animation: shine 3.2s 1.6s ease-in-out infinite;
+  }
+
   footer { margin-top: 36px; text-align: center; font-size: 12px; color: #9aa1ab; }
+
+  /* ── 등장 애니메이션 ── */
+  .rise { opacity: 0; transform: translateY(18px); animation: rise .6s cubic-bezier(.2,.7,.2,1) forwards; }
+  .d1 { animation-delay: .05s; } .d2 { animation-delay: .18s; } .d3 { animation-delay: .3s; }
+  .d4 { animation-delay: .45s; } .d5 { animation-delay: .55s; } .d6 { animation-delay: .65s; }
+  .d7 { animation-delay: .75s; } .d8 { animation-delay: .85s; }
+
+  @keyframes rise { to { opacity: 1; transform: none; } }
+  @keyframes draw { to { transform: scaleX(1); } }
+  @keyframes float { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-14px); } }
+  @keyframes shine { 0% { left: -60%; } 45%,100% { left: 130%; } }
+
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { animation: none !important; }
+    .rise { opacity: 1; transform: none; }
+    h1 .hl::after { transform: scaleX(1); }
+  }
 </style>
 </head>
 <body>
+
+<header class="hero">
+  <div class="grid"></div>
+  <span class="shape s1"></span><span class="shape s2"></span>
+  <span class="shape s3"></span><span class="shape s4"></span>
+  <div class="hero-inner">
+    <p class="eyebrow rise d1">HONGJE INWANG</p>
+    <h1>
+      <span class="big rise d2"><span class="hl"><span>홍제인왕</span></span></span>
+      <span class="rest rise d3">스마트해법수학영어학원</span>
+    </h1>
+    <div class="chips rise d4">
+      <span class="chip">초등부</span><span class="chip">중등부</span><span class="chip">고등부</span><span class="chip">영어 · 수학</span>
+    </div>
+  </div>
+</header>
+
 <main>
-  <header>
-    <p class="eyebrow">HONGJE INWANG</p>
-    <h1><span class="big"><span class="hl">홍제인왕</span></span><span class="rest">스마트해법수학영어학원</span></h1>
-    <p class="tagline">인왕초 · 인왕중 학생들의 영어·수학 학원</p>
-  </header>
-
-  <nav class="links">
-    <a class="link primary" href="https://docs.google.com/forms/d/e/1FAIpQLScepb-YlXiO41wg4dgIA-C8b9Tbxua7ohOrcfxNXPIIxZPOpg/viewform" target="_blank" rel="noopener">
-      <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M9 8h6M9 12h6M9 16h3"/></svg></span>
-      <span class="label">상담 신청하기<small>신청서를 남겨주시면 연락드려요</small></span>
-      <span class="arrow">›</span>
-    </a>
-
-    <a class="link" href="https://pf.kakao.com/_ilNFX" target="_blank" rel="noopener">
-      <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4C7 4 3 7.1 3 11c0 2.4 1.5 4.5 3.9 5.8L6 20l3.6-2.2c.8.1 1.6.2 2.4.2 5 0 9-3.1 9-7s-4-7-9-7z"/></svg></span>
-      <span class="label">카카오톡 채널<small>궁금한 점 문의하기</small></span>
-      <span class="arrow">›</span>
-    </a>
-
-    <a class="link" href="https://blog.naver.com/smarthb_inwang" target="_blank" rel="noopener">
-      <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20h4L19 9l-4-4L4 16v4z"/><path d="M13.5 6.5l4 4"/></svg></span>
-      <span class="label">네이버 블로그<small>수업 이야기와 학원 소식</small></span>
-      <span class="arrow">›</span>
-    </a>
-
-    <a class="link" href="https://www.instagram.com/inwang_smarthb/" target="_blank" rel="noopener">
-      <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".6" fill="currentColor"/></svg></span>
-      <span class="label">인스타그램<small>@inwang_smarthb</small></span>
-      <span class="arrow">›</span>
-    </a>
-  </nav>
-
-  <section class="app">
+  <section class="app rise d5">
     <div class="app-head">
       <span class="app-icon">Voca</span>
       <div>
-        <p class="app-name">인왕보카</p>
+        <p class="app-name">인왕보카<span class="new">APP</span></p>
         <p class="app-desc">우리 학원 영단어 학습 앱</p>
       </div>
     </div>
@@ -170,6 +235,32 @@
       </a>
     </div>
   </section>
+
+  <nav class="links">
+    <a class="link primary rise d6" href="https://docs.google.com/forms/d/e/1FAIpQLScepb-YlXiO41wg4dgIA-C8b9Tbxua7ohOrcfxNXPIIxZPOpg/viewform" target="_blank" rel="noopener">
+      <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M9 8h6M9 12h6M9 16h3"/></svg></span>
+      <span class="label">상담 신청하기<small>신청서를 남겨주시면 연락드려요</small></span>
+      <span class="arrow">›</span>
+    </a>
+
+    <a class="link rise d7" href="https://pf.kakao.com/_ilNFX" target="_blank" rel="noopener">
+      <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4C7 4 3 7.1 3 11c0 2.4 1.5 4.5 3.9 5.8L6 20l3.6-2.2c.8.1 1.6.2 2.4.2 5 0 9-3.1 9-7s-4-7-9-7z"/></svg></span>
+      <span class="label">카카오톡 채널<small>궁금한 점 문의하기</small></span>
+      <span class="arrow">›</span>
+    </a>
+
+    <a class="link rise d8" href="https://blog.naver.com/smarthb_inwang" target="_blank" rel="noopener">
+      <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20h4L19 9l-4-4L4 16v4z"/><path d="M13.5 6.5l4 4"/></svg></span>
+      <span class="label">네이버 블로그<small>수업 이야기와 학원 소식</small></span>
+      <span class="arrow">›</span>
+    </a>
+
+    <a class="link rise d8" style="animation-delay:.95s" href="https://www.instagram.com/inwang_smarthb/" target="_blank" rel="noopener">
+      <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".6" fill="currentColor"/></svg></span>
+      <span class="label">인스타그램<small>@inwang_smarthb</small></span>
+      <span class="arrow">›</span>
+    </a>
+  </nav>
 
   <footer>© 홍제인왕스마트해법수학영어학원</footer>
 </main>
